@@ -1,0 +1,9 @@
+cd C:/Users/orici/Documents/NetBeansProjects/ConversorTemperaturas
+git status
+
+
+
+@version info:
+	Version: 1.00 (14.10.2016)
+		Primer commit - Estructura del proyecto: Conversor de temperaturas
+		Guardadas clases Conversor de temperaturas

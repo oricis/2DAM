@@ -1,0 +1,35 @@
+cd C:/Users/orici/Documents/NetBeansProjects/combobox
+git status
+
+
+
+@version info:
+	Version: 1.00 (15.10.2016)
+		Implementado listener
+		Se alinea label al centro de la ventana
+		Práctica finalizada
+
+	Version: 0.07 (15.10.2016)
+		Creado listener para el combo y añadido al elemento
+
+	Version: 0.06 (15.10.2016)
+		Alineada etiqueta del label debajo de la imagen
+		Añadido "tooltip" al label
+
+	Version: 0.05 (15.10.2016)
+		Añadidos componentes GUI al frame
+		Se ejecuta la App mostrando Combobox y label con imagen y etiqueta
+
+	Version: 0.04 (15.10.2016)
+		Añadidas propiedades clase Frame
+		Añadido directorio e imagenes para la práctica
+
+	Version: 0.03 (15.10.2016)
+		Config the Frame (size, layout, etc)
+
+	Version: 0.02 (15.10.2016)
+		Añadida clase Frame
+
+	Version: 0.01 (15.10.2016)
+		Primer commit - Estructura de la práctica: combobox selección imagen
+		

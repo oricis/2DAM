@@ -1,0 +1,9 @@
+cd C:/Users/orici/Documents/NetBeansProjects/checkboxes
+git status
+
+
+
+@version info:
+	Version: 1.00 (14.10.2016)
+		Primer commit - Estructura de la práctica: checkboxes y estilos de texto
+		Guardadas clases práctica

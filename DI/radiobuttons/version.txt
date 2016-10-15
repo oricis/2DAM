@@ -1,0 +1,9 @@
+cd C:/Users/orici/Documents/NetBeansProjects/radiobuttons
+git status
+
+
+
+@version info:
+	Version: 1.00 (14.10.2016)
+		Primer commit - Estructura de la práctica: radio-buttons y estilos de texto
+		Guardadas clases práctica

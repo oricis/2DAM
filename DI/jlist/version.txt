@@ -1,0 +1,21 @@
+cd C:/Users/orici/Documents/NetBeansProjects/jlist
+git status
+
+
+
+@version info:
+	Version: 1.00 (15.10.2016)
+		Implementado listener
+		Final práctica
+
+	Version: 0.1.1 (15.10.2016)
+		Añadida scroll a la lista
+
+	Version: 0.1 (15.10.2016)
+		Creada lista y añadida al marco
+		Creado listener para la lista y añadido al elemento
+
+
+	Version: 0.01 (15.10.2016)
+		Primer commit - Estructura de la práctica: jlist selección color fondo ventana
+		
