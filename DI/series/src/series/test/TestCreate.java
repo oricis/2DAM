@@ -7,6 +7,7 @@
 package series.test;
 
 //imports
+import series.model.DataStoreHandler;
 import series.model.Show;
 import series.model.ShowsList;
 
@@ -56,7 +57,9 @@ public class TestCreate {
             //Add another show to list
             sl.add( s );
 
-
+            //Store data
+            DataStoreHandler.store( sl );
+            
             //Display succesful message
             System.out.println( "Series guardadas correctamente." );
         }

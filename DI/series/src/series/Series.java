@@ -21,11 +21,12 @@ public class Series {
      * Main method
      * 
      * @param args the command line arguments
+     * @throws java.lang.ClassNotFoundException
      */
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws java.lang.ClassNotFoundException {
         
         // Test
-        new TestCreate();
+        //new TestCreate();
         new TestRetrieve();
     }
 
