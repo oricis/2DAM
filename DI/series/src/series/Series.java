@@ -8,7 +8,9 @@
 package series;
 
 //imports
+import series.controller.*;
 import series.test.*;
+import series.view.*;
 
 
 /**
@@ -25,9 +27,14 @@ public class Series {
      */
     public static void main( String[] args ) throws java.lang.ClassNotFoundException {
         
+        /*Frame f = new Frame( new Controller( ));
+        f.setVisible( true );
+        /**/
+        
         // Test
-        //new TestCreate();
+        new TestCreate();
         new TestRetrieve();
+        /**/
     }
 
     
