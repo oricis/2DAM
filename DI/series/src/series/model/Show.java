@@ -22,7 +22,9 @@ public class Show implements Serializable {
         private boolean completed  = false;
         private String gender      = "";
         private float last_episode_viewed = 0; // p.e. 2.03  -> temp. 2, ep. 03
+        private String producer    = ""; // Producer company
         private int seasons        = 0;
+        private int rating         = 3;  // (1-5), 3 is the middle
         private String store_media = "";
         private String title       = "";
         
@@ -35,26 +37,32 @@ public class Show implements Serializable {
          * 
          * @param title
          * @param gender
+         * @param producer
          * @param seasons
          * @param cancelled
          * @param completed
          * @param last_episode_viewed
          * @param store_media
+         * @param rating
          */
         public Show(
             String title,
             String gender,
+            String producer,
             int seasons,
+            float last_episode_viewed,
+            String store_media,
             boolean cancelled,
             boolean completed,
-            float last_episode_viewed,
-            String store_media
+            int rating
         ) {
             
             this.cancelled           = cancelled;
             this.completed           = completed;
             this.gender              = gender;
             this.last_episode_viewed = last_episode_viewed;
+            this.producer            = producer;
+            this.rating              = rating;
             this.seasons             = seasons;
             this.store_media         = store_media;
             this.title               = title;
@@ -78,7 +86,13 @@ public class Show implements Serializable {
             this.title      = title;
         }
 
-
+        /**
+         * Construct
+         * 
+         */
+        public Show() {}
+        
+        
     ////////////////////////////////////////////////////
     /// Getters
     ///
@@ -98,9 +112,19 @@ public class Show implements Serializable {
             return gender;
         }
 
-        public float getLast_episode_viewed() {
+        public float getLastEpisodeViewed() {
             
             return last_episode_viewed;
+        }
+        
+        public String getProducer() {
+            
+            return producer;
+        }
+        
+        public int getRating() {
+            
+            return rating;
         }
 
         public int getSeasons() {
@@ -108,7 +132,7 @@ public class Show implements Serializable {
             return seasons;
         }
 
-        public String getStore_media() {
+        public String getStoreMedia() {
             
             return store_media;
         }
@@ -141,7 +165,17 @@ public class Show implements Serializable {
         public void setLast_episode_viewed( float last_episode_viewed ) {
             this.last_episode_viewed = last_episode_viewed;
         }
+        
+        public void setProducer( String producer ) {
 
+            this.producer = producer;
+        }
+        
+        public void setRating( int rating ) {
+
+            this.rating = rating;
+        }
+        
         public void setSeasons( int seasons ) {
 
             this.seasons = seasons;

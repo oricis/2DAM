@@ -42,11 +42,14 @@ public class DataStoreHandler {
                 
                 Trace.ln( "Getting data from file..." );
                 arr_data = (ShowsList) ois.readObject();
-                /*
+                
+                Trace.ln( "Data has been retrieve from file !" );
+                Trace.ln( "Try closing streams..." );
+                
                 //close streams
                 ois.close();
                 fis.close();
-            */
+                /**/
             } catch( IOException e ) {
 
                 System.out.println( "Err: failure try open file with data" );
@@ -70,8 +73,11 @@ public class DataStoreHandler {
                 FileOutputStream fos   = new FileOutputStream( f );
                 ObjectOutputStream oos = new ObjectOutputStream( fos );
                 
-                //write data in file
+                Trace.ln( "Storing data in file..." );
                 oos.writeObject( oos );
+                
+                Trace.ln( "Data store in file !" );
+                Trace.ln( "Try closing streams..." );
                 
                 //close streams
                 oos.close();
