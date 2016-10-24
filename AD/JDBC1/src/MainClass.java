@@ -66,8 +66,14 @@ public class MainClass {
             // y cuántos profesores tiene, con el sueldo medio de los mismos
             //new practicas.Practica_8_5();
             
-            //Practica 9.1
-            new practicas.Practica_9_1();
+            //Practica 9.1 - PreparedStatement
+            //Insertar en la base de datos MySql un nuevo departamento
+            //new practicas.Practica_9_1();
+            
+            //Practica 9.2 - PreparedStatement
+            //Añadir una determinada cantidad al salario de los profesores 
+            //de un determinado departamento
+            new practicas.Practica_9_2();
             
             
             //Test
