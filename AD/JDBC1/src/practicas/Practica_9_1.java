@@ -30,8 +30,8 @@ public class Practica_9_1 {
             System.out.println( "Practica_9_1 -> PreparedStatement" );
 
             String sql = "INSERT INTO departamentos"//( dept_no, dnombre, loc )
-                //+ " VALUES( ?, ?, ? )";
-                + " VALUES(?,\'?\',\'?\')";
+                + " VALUES( ?, ?, ? )";
+                //+ " VALUES(?,\'?\',\'?\')"; //err -> avoid quotation marks
             System.out.println( "SQL -> " + sql );
 
 
@@ -51,7 +51,7 @@ public class Practica_9_1 {
                     System.out.println( "Introducidos parámetros..." );
                     System.out.println( "Ejecuta sentencia recogiendo filas afectatas..." );
                     
-                    int rows = pst.executeUpdate( sql );
+                    int rows = pst.executeUpdate();
                     
                     System.out.println( "Filas afectatas: " + rows );
 
