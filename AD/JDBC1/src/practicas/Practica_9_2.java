@@ -1,5 +1,5 @@
 /**
- * @file: Practica_9_1.java
+ * @file: Practica_9_2.java
  * 
  * @utor: Moisés Alcocer, 2016
  */
@@ -13,7 +13,7 @@ import java.sql.*;
  * This class ...
  * 
  */
-public class Practica_9_1 {
+public class Practica_9_2 {
 
     /**********************************/
     /*** Properties declaration *******/
@@ -26,17 +26,22 @@ public class Practica_9_1 {
          * Construct
          * 
          */
-        public Practica_9_1() {
-            System.out.println( "Practica_9_1 -> PreparedStatement" );
+        public Practica_9_2() {
+            System.out.println( "Practica_9_2 -> PreparedStatement" );
 
-            String sql = "INSERT INTO departamentos"//( dept_no, dnombre, loc )
-                + " VALUES( ?, ?, ? )";
-                //+ " VALUES(?,\'?\',\'?\')"; //err -> avoid quotation marks
+            //Añadir una determinada cantidad al salario de los profesores 
+            //de un determinado departamento
+            String sql = "UPDATE profesores SET salario=( salario + ? )"
+                + " WHERE dept_no=(SELECT dept_no FROM departamentos"
+                + " WHERE dnombre=?)";
             System.out.println( "SQL* -> " + sql );
 
 
             System.out.println( "Obtener conexión..." );
-            Connection con = universal.GetConnection.get( "mysql", mysql.DbConstants.DB_NAME );
+            Connection con = universal.GetConnection.get( 
+                "mysql", 
+                mysql.DbConstants.DB_NAME 
+            );
 
             try {
                 
@@ -44,14 +49,14 @@ public class Practica_9_1 {
                 try ( PreparedStatement pst = con.prepareStatement( sql )) {
                     
                     System.out.println( "Cargando parámetros..." );
-                    pst.setInt(    1, 70 );
-                    pst.setString( 2, "BIO" );
-                    pst.setString( 3, "DESPA1" );
+                    pst.setInt(    1, 50 );
+                    pst.setString( 2, "FOL" );
                     
                     System.out.println( "Introducidos parámetros..." );
-                    System.out.println( "Ejecuta sentencia recogiendo filas afectatas..." );
+                    System.out.println( 
+                        "Ejecuta sentencia recogiendo filas afectatas..." 
+                    );
                     
-                    //int rows = pst.executeUpdate( sql ); //err
                     int rows = pst.executeUpdate();
                     
                     System.out.println( "Filas afectatas: " + rows );
