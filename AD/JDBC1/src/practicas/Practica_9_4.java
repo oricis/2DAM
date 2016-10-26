@@ -27,7 +27,7 @@ import javax.xml.transform.*;
  * ¿Cómo se que una consulta no devolvio resultados, p.e. departamento inexistente? Contar filas del ResultSet
  * 
  */
-public class Practica_9_4 implements Result {
+public class Practica_9_4 {
 
     /**********************************/
     /*** Properties declaration *******/
@@ -145,15 +145,5 @@ public class Practica_9_4 implements Result {
             } else
                 System.out.println( "Error. No has pasado mysql como SGBD" );
         }
-
-    @Override
-    public void setSystemId(String systemId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getSystemId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 } //class
