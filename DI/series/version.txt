@@ -4,14 +4,68 @@ git status
 
 
 @version info:
-	Versión: 1.00 (16.10.2016)
 
-	Versión: 0.07 (16.10.2016)
-	Versión: 0.06 (16.10.2016)
-	Versión: 0.05 (16.10.2016)
-	Versión: 0.04 (16.10.2016)
+	Versión: 0.4.02 (29.10.2016)
+		Corrección error con las selects al introducir nueva serie
 
-	
+	Versión: 0.4.01 (29.10.2016)
+		Renombrados algunos métodos de la clase interna "Frame / Display"
+		Modificaciones en comentarios
+
+	Versión: 0.4 (29.10.2016)
+		Implementada funcionalidad: editar serie
+
+	Versión: 0.3 (29.10.2016)
+		Implementada funcionalidad: eliminar serie
+
+	Versión: 0.2.04 (29.10.2016)
+		Refactorización
+		  Creada clase interna GetsFromGUI y movidos métodos para obtener datos de la GUI
+
+	Versión: 0.2.03 (28.10.2016)
+		Establece color de fondo blanco en botones "Add", "Del" y "Edit".
+		Boton "Add" cambia su fondo a rojo en modo "añadir serie"
+		Correpciones cuando se inicia la App sin que exista ninguna serie guardada
+
+	Versión: 0.2.02 (28.10.2016)
+		Correcciones función añadir nueva serie:
+		  - La GUI vuelve a su estado habitual y muestra la primera serie almacenada
+		  - Se recarga la lista de series para poder visualizar los nuevos datos
+
+	Versión: 0.2.01 (28.10.2016)
+		Correcciones mostrar datos en radios y checkboxes
+		Implementada funcionalidad para añadir nuevas series
+
+	Versión: 0.2 (28.10.2016)
+		Creada clase "GuiConposer" en la vista y movida la "parte de creación de la GUI" desde la clase "Frame" que ahora extiende de esta
+
+	Versión: 0.1.01 (28.10.2016)
+		Añadidas mas series en "TestCreate"
+		Corrección y mejora "TestRetrieve"
+
+	Versión: 0.1 (27.10.2016)
+		Creada clase Controller
+		Implementados botones de navegación (permiten recorrer las series almacenadas)
+
+	Versión: 0.07 (27.10.2016)
+		Creada vista de la App
+		Añadida documentación composición de la GUI
+
+	Versión: 0.06 (27.10.2016)
+		Añadido directorio "helpers/" y clase "helpers/Trace.java" para trazados
+		Implementados clases test: "TestCreate" y "TestRetrieve"
+
+	Versión: 0.05 (27.10.2016)
+		Corrección errores guardado series en fichero ( series/model/DataStoreHandler.java )
+		Nuevas propiedades en la clase Show
+
+	Versión: 0.04 (18.10.2016)
+		Agragadas propiedades y métodos en clase "model.Show":
+		  - String producer / String getProducer() / setProducer( String )
+		  - int rating / int getRating() / setRating( int )
+		Añadido constructor sin parámetros en "model.Show"
+		Modificada clase test: "TestCreate"
+
 	Versión: 0.03 (16.10.2016)
 		Implementadas clases para testear modelo:
           - TestCreate    -> Test creación y guardado nuevas series
