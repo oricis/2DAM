@@ -54,9 +54,15 @@ public class DataStoreHandler {
 
                 System.out.println( "Err: failure try open file with data" );
                 System.out.println( " ---> " + e.toString( ));
+
+                return null;
                 
             } finally {
+                
                 Trace.ln( "Returnning the data..." );
+                Trace.lsep();
+                Trace.ln( "" );
+
                 return arr_data;
             }
         }
@@ -64,9 +70,9 @@ public class DataStoreHandler {
         /**
          * Put the data in the store
          * 
-         * @param data
+         * @param arr_data
          */
-        public static void store( ShowsList data ) {
+        public static void store( ShowsList arr_data ) {
             Trace.ln( "DataStoreHandler / store()" );
 
             try {
@@ -74,7 +80,7 @@ public class DataStoreHandler {
                 ObjectOutputStream oos = new ObjectOutputStream( fos );
                 
                 Trace.ln( "Storing data in file..." );
-                oos.writeObject( oos );
+                oos.writeObject( arr_data );
                 
                 Trace.ln( "Data store in file !" );
                 Trace.ln( "Try closing streams..." );

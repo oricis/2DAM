@@ -162,7 +162,7 @@ public class Show implements Serializable {
             this.gender = gender;
         }
 
-        public void setLast_episode_viewed( float last_episode_viewed ) {
+        public void setLastEpisodeViewed( float last_episode_viewed ) {
             this.last_episode_viewed = last_episode_viewed;
         }
         
@@ -181,7 +181,7 @@ public class Show implements Serializable {
             this.seasons = seasons;
         }
 
-        public void setStore_media( String store_media ) {
+        public void setStoreMedia( String store_media ) {
 
             this.store_media = store_media;
         }

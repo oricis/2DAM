@@ -28,7 +28,7 @@ public class ShowsList implements Serializable {
 
         /**
          * Construct
-         * Create an ArrayList with the shows
+         * Create an ArrayList with the Shows
          * 
          */
         public ShowsList() {
@@ -38,7 +38,7 @@ public class ShowsList implements Serializable {
 
 
         /**
-         * Set all shows
+         * Set all Shows
          * 
          * @param s
          */
@@ -48,17 +48,19 @@ public class ShowsList implements Serializable {
         }
         
         /**
-         * Get number of registered shows
+         * Get number of registered Shows
          * 
          * @return 
          */
         public int count() {
-        
-            return arr_shows.size();
+            int size = arr_shows.size();
+            System.out.println( "Número de series almacenadas: " + size );
+            
+            return size;
         }
 
         /**
-         * Get all shows
+         * Get all Shows
          * 
          * @param n
          * @return 
@@ -67,5 +69,26 @@ public class ShowsList implements Serializable {
         
             return arr_shows.get( n );
         }
-
+        
+        /**
+         * Remove a Show
+         * 
+         * @param n
+         */
+        public void remove( int n ) {
+        
+            arr_shows.remove( n );
+        }
+        
+        /**
+         * Replace a Show by other
+         * 
+         * @param position
+         * @param s 
+         */
+        public void replace( int position, Show s ) {
+            
+            arr_shows.set( position, s );
+        }
+        
 } //class

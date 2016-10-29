@@ -42,23 +42,39 @@ public class TestRetrieve {
                 System.out.println( e.toString( ));
             }
             
-            if ( sl != null ) {
-                
-                //Get first and second stored Shows
-                Show s1 = sl.get( 0 );
-                Show s2 = sl.get( 1 );
+            if ( sl != null )
+                displayData( sl );
+        }
 
+        /**
+         * Show the stored Shows
+         *
+         * @param   sl
+         */
+        private void displayData( ShowsList sl ) {
+
+            Trace.ln( "\n-------------------------------------" );
+                
+            int i = 0;
+            int n = sl.count();
+            Show s;
+            String title;
+            String gender;
+
+            System.out.println( "Series guardadas:" );
+
+            while ( i < n ) {
+
+                s = sl.get( i );
 
                 //Get some shows data
-                String title1  = s1.getTitle();
-                String title2  = s1.getTitle();
-                String gender1 = s1.getGender();
-                String gender2 = s1.getGender();
+                title  = s.getTitle();
+                gender = s.getGender();
 
-                //Display some shows data
-                System.out.println( "Series guardadas:" );
-                System.out.println( "1. " + title1 + " (" + gender1 + ")" );
-                System.out.println( "2. " + title2 + " (" + gender2 + ")" );
+                i++;
+
+                //Display the data
+                System.out.println( i + ". " + title + " (" + gender + ")" );
             }
         }
 
