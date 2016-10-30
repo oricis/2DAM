@@ -1,0 +1,44 @@
+
+@version info:
+
+	Versión: 0.1.05 (30.10.2016)
+		Refactorizada clase interna "Frame/AppListener"
+
+	Versión: 0.1.04 (30.10.2016)
+		Implementados botones de desplazamiento. Se muestran los diferentes registros recuperados despues de pulsar el boton "Todos"
+
+	Versión: 0.1.03 (30.10.2016)
+		Reorganizadas propiedades en "GuiComposer"
+		Corrección errores:
+		  - Frame -> Se producia error al intentar buscar una ID cuando el campo estaba vacio
+		  - Frame -> Se producia error al intentar buscar una ID cuando el campo tenía un contenido incorrecto, no un número entero, en cuyo caso se cambia el color del borde del campo
+		  - Cierre de la conexión cuando se busca un registro inexistente, impidiendo nuevas búsquedas
+
+	Versión: 0.1.02 (30.10.2016)
+		Implementada recuperación de todos los registros desde la GUI:
+		  - Se muestra el primer registro del conjunto. 
+		  - Se habilitan los botones de movimiento. 
+		  - El campo de busqueda por ID se borra.
+
+	Versión: 0.1.01 (30.10.2016)
+		Implementada busqueda de un registro por ID a traves de la GUI
+
+	Versión: 0.1 (30.10.2016)
+		Implementada construcción de la GUI de la App
+
+	Versión: 0.04 (30.10.2016)
+		Creada interfaz "DAO" y la clase "ClientsDAO" que implementa la misma para acceso a los datos e la tabla "clients"
+		Creada clase "app.helpers.SQL"
+		Implementados test recuperación datos de la BD con "ClientsDAO"
+
+	Versión: 0.03 (30.10.2016)
+		Añadido script SQL para crear tabla "clients" e insertar registros de prueba
+
+	Versión: 0.02 (30.10.2016)
+		Añadidas clases "DbConnection" y "DbConstants" para realizar la conexión con la BD
+		Creada clase "Client" -> Entidad del sistema
+
+	Versión: 0.01 (30.10.2016)
+		Primer commit - Creada estructura de la App
+
+		
