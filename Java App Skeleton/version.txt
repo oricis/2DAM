@@ -1,0 +1,12 @@
+cd local_path_to_proyect
+git status
+
+
+
+@version info:
+
+	Version: 0.03 (xx.xx.2016)
+	Version: 0.02 (xx.xx.2016)
+
+	Version: 0.01 (xx.xx.2016)
+		Primer commit - Estructura del proyecto

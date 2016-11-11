@@ -1,0 +1,103 @@
+<RelativeLayout   
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+    <EditText   
+        android:id="@+id/EditText01"
+        android:hint="Enter some text..."
+        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content" 
+        android:layout_toLeftOf="@+id/Button01"
+        android:layout_width="fill_parent"></EditText>
+
+    <Button   
+        android:id="@+id/Button01"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Press Here!"></Button>
+
+</RelativeLayout>
+
+
+/**************************************************/
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+    
+    <TextView   
+        android:id="@+id/TextView01"
+        android:background="#f00"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="RED"
+        android:textColor="#000"></TextView>
+    <TextView   
+        android:id="@+id/TextView02"
+        android:background="#ffa500"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="ORANGE"
+        android:textColor="#000"></TextView>
+    <TextView   
+        android:id="@+id/TextView03"
+        android:background="#ffff00"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="YELLOW"
+        android:textColor="#000"></TextView>
+    <TextView   
+        android:id="@+id/TextView04"
+        android:background="#0f0"        
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="GREEN"
+        android:textColor="#000"></TextView>
+    <TextView   
+        android:id="@+id/TextView05"
+        android:background="#00f"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="BLUE"
+        android:textColor="#fff"></TextView>
+    <TextView   
+        android:id="@+id/TextView06"
+        android:background="#4b0082"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:padding="25dp"
+        android:text="INDIGO"
+        android:textColor="#fff"></TextView>   
+    <TextView   
+        android:id="@+id/TextView07"
+        android:background="#ee82ee"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:padding="25dp"
+        android:text="VIOLET"
+        android:textColor="#000"></TextView>   
+</RelativeLayout>  
