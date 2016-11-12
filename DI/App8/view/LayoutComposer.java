@@ -10,6 +10,7 @@ package app.view;
 import java.awt.*;
 import javax.swing.*;
 
+import app.model.Model;
 
 /**
  * This class compose a GUI
@@ -29,27 +30,27 @@ public class LayoutComposer extends JFrame {
 
         protected JButton print_btn = new JButton( "Imprimir" );
 
-        protected JCheckBox check_1 = new JCheckBox( "Raton normal" );
-        protected JCheckBox check_2 = new JCheckBox( "Raton pro" );
-        protected JCheckBox check_3 = new JCheckBox( "Teclado normal" );
-        protected JCheckBox check_4 = new JCheckBox( "Teclado pro" );
+        protected JCheckBox check_1 = new JCheckBox( Model.VARS[ 0 ] );
+        protected JCheckBox check_2 = new JCheckBox( Model.VARS[ 1 ] );
+        protected JCheckBox check_3 = new JCheckBox( Model.VARS[ 2 ] );
+        protected JCheckBox check_4 = new JCheckBox( Model.VARS[ 3 ] );
 
         protected ButtonGroup r_group_micros = new ButtonGroup(); //connect the radios
         protected ButtonGroup r_group_ram    = new ButtonGroup();
         protected ButtonGroup r_group_mtores = new ButtonGroup();
 
-        protected JRadioButton r_micros_1 = new JRadioButton( "Intel 1" );
-        protected JRadioButton r_micros_2 = new JRadioButton( "Intel 2" );
-        protected JRadioButton r_micros_3 = new JRadioButton( "AMD 1" );
-        protected JRadioButton r_micros_4 = new JRadioButton( "AMD 2" );
-        protected JRadioButton r_ram_1    = new JRadioButton( "RAM 1Gb" );
-        protected JRadioButton r_ram_2    = new JRadioButton( "RAM 2Gb" );
-        protected JRadioButton r_ram_3    = new JRadioButton( "RAM 4Gb" );
-        protected JRadioButton r_ram_4    = new JRadioButton( "RAM 8Gb" );
-        protected JRadioButton r_mtores_1 = new JRadioButton( "LG 1" );
-        protected JRadioButton r_mtores_2 = new JRadioButton( "LG 2" );
-        protected JRadioButton r_mtores_3 = new JRadioButton( "HP 1" );
-        protected JRadioButton r_mtores_4 = new JRadioButton( "HP 2" );
+        protected JRadioButton r_micros_1 = new JRadioButton( Model.MICROS[ 0 ] );
+        protected JRadioButton r_micros_2 = new JRadioButton( Model.MICROS[ 1 ] );
+        protected JRadioButton r_micros_3 = new JRadioButton( Model.MICROS[ 2 ] );
+        protected JRadioButton r_micros_4 = new JRadioButton( Model.MICROS[ 3 ] );
+        protected JRadioButton r_ram_1    = new JRadioButton( Model.RAMS[ 0 ] );
+        protected JRadioButton r_ram_2    = new JRadioButton( Model.RAMS[ 1 ] );
+        protected JRadioButton r_ram_3    = new JRadioButton( Model.RAMS[ 2 ] );
+        protected JRadioButton r_ram_4    = new JRadioButton( Model.RAMS[ 3 ] );
+        protected JRadioButton r_mtores_1 = new JRadioButton( Model.MTORES[ 0 ] );
+        protected JRadioButton r_mtores_2 = new JRadioButton( Model.MTORES[ 1 ] );
+        protected JRadioButton r_mtores_3 = new JRadioButton( Model.MTORES[ 2 ] );
+        protected JRadioButton r_mtores_4 = new JRadioButton( Model.MTORES[ 3 ] );
 
         private final Dimension d = new Dimension( 142, 200 ); // width, height
         private Insets margin; //int top, int left, int bottom, int right
