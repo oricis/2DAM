@@ -47,7 +47,7 @@ public class LayoutComposer extends JFrame {
 	protected JTextField field_letter	= new JTextField();
 
 
-	private final int n_imgs   = 5;
+	private final int n_imgs = 5;
 	private ImageIcon[] imgs = new ImageIcon[ n_imgs ];
 	
 	private String hidden_word;
@@ -416,16 +416,19 @@ public class LayoutComposer extends JFrame {
 			 * 
 			 */
 			public void setImgs() {
+				Trace.ln( "LayoutComposer / setImgs()" );
 
 				int n;
 				//String path = "img/foto";
-				String path = "foto";
+				String path;
 				
 
 				for ( int i = 0; i < n_imgs; i++ ) {
+					path = "foto";
 
 					n	 = i + 1;
-					path = path + n + ".jpg";
+					path = path + n + ".png";
+					Trace.ln( "Path imagen: " + path );
 
 					try {
 						imgs[ i ] = new ImageIcon(
