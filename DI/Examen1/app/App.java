@@ -27,8 +27,8 @@ public class App {
             },
     		{ 
                 "Las clases Swing", 
-                "respuesta 2",             
-                "respuesta 3", 
+                "Dan soporte a las GUI",             
+                "Son clases de baile", 
                 "Ambas son correctas" 
             },
     		{ 
@@ -39,14 +39,14 @@ public class App {
             },
     		{ 
                 "¿Netbeans es peor que Eclipse?", 
-                "respuesta 2", 
-                "respuesta 3", 
-                "A y B correctas" 
+                "Si, pero solo se puede desarrollar en Java", 
+                "No, pero Eclipse es de pago", 
+                "A y B incorrectas" 
             },
     		{ 
                 "¿Oracle es propietaria de Java?", 
-                "respuesta 2", 
-                "respuesta 3", 
+                "Si", 
+                "No", 
                 "50 %" 
             }
     	};

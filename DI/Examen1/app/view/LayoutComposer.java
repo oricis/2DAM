@@ -163,6 +163,22 @@ public class LayoutComposer extends JFrame {
 			panel_5.add( rb_1e );
 			panel_5.add( rb_2e );
 			panel_5.add( rb_3e );
+
+			bg1.add( rb_1a );
+			bg1.add( rb_2a );
+			bg1.add( rb_3a );
+			bg2.add( rb_1b );
+			bg2.add( rb_2b );
+			bg2.add( rb_3b );
+			bg3.add( rb_1c );
+			bg3.add( rb_2c );
+			bg3.add( rb_3c );
+			bg4.add( rb_1d );
+			bg4.add( rb_2d );
+			bg4.add( rb_3d );
+			bg5.add( rb_1e );
+			bg5.add( rb_2e );
+			bg5.add( rb_3e );
 		}
 		
 
