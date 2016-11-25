@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 
 /**
- * This class ...
+ * This class handles the test´s logic
  * 
  */
 public class Frame extends LayoutComposer {
@@ -46,6 +46,16 @@ public class Frame extends LayoutComposer {
             btn.addActionListener( new AppListener( ));
 	    }
 
+        /**
+         * Resets the counters
+         * 
+         */
+        private void resetCounters() {
+
+            aciertos = 0;
+            fallos   = 0;
+            nores    = 0;
+        }
 
     /**********************************/
     /*** Internal clases **************/
@@ -60,102 +70,22 @@ public class Frame extends LayoutComposer {
             public void actionPerformed( ActionEvent e ) {
                 
                 //Resetear contadores
-                aciertos = 0;
-                fallos   = 0;
-                nores    = 0;
-
-
-                int pos      = 0;
-                String res   = "";
-
-                //respuestas
-                int res_pregunta_1 = new Response().getFrom1();
-                int res_pregunta_2 = new Response().getFrom2();
-                int res_pregunta_3 = new Response().getFrom3();
-                int res_pregunta_4 = new Response().getFrom4();
-                int res_pregunta_5 = new Response().getFrom5();
-
-                //Trazas
-                System.out.println( "Respuesta 1: " + res_pregunta_1 );
-                System.out.println( "Respuesta 2: " + res_pregunta_2 );
-                System.out.println( "Respuesta 3: " + res_pregunta_3 );
-                System.out.println( "Respuesta 4: " + res_pregunta_4 );
-                System.out.println( "Respuesta 5: " + res_pregunta_5 );
-
-                if ( res_pregunta_1 == 5 )
-                    nores++;
-
-                else {
-                    
-                    pos = correctas[0];
-
-                    //Traza
-                    System.out.println( "Correcta: " + pos + " / Respuesta: " + res_pregunta_1 );
-                    //res_pregunta_1 se espera que sea acertara si es igual a (pos - 1)
-                    res = ( pregunta[pos] == pregunta[res_pregunta_1] )
-                        ? "Respuesta 1: OK"
-                        : "Respuesta 1: ERR";
-                    System.out.println( res );
-
-                    if (( pos - 1 ) == res_pregunta_1 )
-                        aciertos++;
-                    else
-                        fallos++;
-                }
-
-                if ( res_pregunta_2 == 5 )
-                    nores++;
-
-                else {
-                    pos = correctas[1];
-
-                    if (( pos - 1 ) == res_pregunta_2 )
-                        aciertos++;
-                    else
-                        fallos++;
-                }
-                
-                if ( res_pregunta_3 == 5 )
-                    nores++;
-
-                else {
-                    pos = correctas[2];
-
-                    if (( pos - 1 ) == res_pregunta_3 )
-                        aciertos++;
-                    else
-                        fallos++;
-                }
+                resetCounters();
 
                 
-                if ( res_pregunta_4 == 5 )
-                    nores++;
+                //Comprobar respuestas
+                new Question().check1();
+                new Question().check2();
+                new Question().check3();
+                new Question().check4();
+                new Question().check5();
 
-                else {
-                    pos = correctas[3];
-
-                    if (( pos - 1 ) == res_pregunta_4 )
-                        aciertos++;
-                    else
-                        fallos++;
-                }
-
-                if ( res_pregunta_5 == 5 )
-                    nores++;
-
-                else {
-                    pos = correctas[4];
-
-                    if (( pos - 1 ) == res_pregunta_5 )
-                        aciertos++;
-                    else
-                        fallos++;
-                }
 
                 //Compone string resultado
                 String str_respuestas = "Aciertos: " + aciertos + " Fallos: " + fallos;
                 if ( nores > 0 )
                     str_respuestas = str_respuestas + "\nNo respondidas: " + nores;
+
 
                 //Muestra resultado
                 JOptionPane.showMessageDialog(
@@ -166,8 +96,10 @@ public class Frame extends LayoutComposer {
 
     	} //class
 
-
-
+        /**
+         * This Class gets the response for every question
+         * 
+         */
         private class Response {
             
             public int getFrom1() {
@@ -250,6 +182,118 @@ public class Frame extends LayoutComposer {
                 return 5;
             }
 
-        }//class
+        } //class
 
+        /**
+         * This Class handles the questions
+         * 
+         */
+        private class Question {
+
+            /**********************************/
+            /*** Properties declaration *******/
+                
+                int pos = 0;
+
+
+            /**********************************/
+            /*** Methods declaration **********/
+            
+                public void check1() {
+                    int res_pregunta_1 = new Response().getFrom1();
+                    
+                    //Trazas
+                    System.out.println( "Respuesta 1: " + res_pregunta_1 );
+                    if ( res_pregunta_1 == 5 )
+                        nores++;
+
+                    else {
+                        
+                        pos = correctas[0];
+
+                        //Traza
+                        System.out.println( "Correcta: " + pos + " / Respuesta: " + res_pregunta_1 );
+                        //res_pregunta_1 se espera que sea acertara si es igual a (pos - 1)
+                        String res = ( pregunta[pos] == pregunta[res_pregunta_1] )
+                            ? "Respuesta 1: OK"
+                            : "Respuesta 1: ERR";
+                        System.out.println( res );
+
+                        if (( pos - 1 ) == res_pregunta_1 )
+                            aciertos++;
+                        else
+                            fallos++;
+                    }
+                }
+
+                public void check2() {
+                    int res_pregunta_2 = new Response().getFrom2();
+                    System.out.println( "Respuesta 2: " + res_pregunta_2 );
+                    
+                    if ( res_pregunta_2 == 5 )
+                        nores++;
+
+                    else {
+                        pos = correctas[1];
+
+                        if (( pos - 1 ) == res_pregunta_2 )
+                            aciertos++;
+                        else
+                            fallos++;
+                    }
+                }
+
+                public void check3() {
+                    int res_pregunta_3 = new Response().getFrom3();
+                    System.out.println( "Respuesta 3: " + res_pregunta_3 );
+                    
+                    if ( res_pregunta_3 == 5 )
+                        nores++;
+
+                    else {
+                        pos = correctas[2];
+
+                        if (( pos - 1 ) == res_pregunta_3 )
+                            aciertos++;
+                        else
+                            fallos++;
+                    }
+                }
+
+                public void check4() {
+                    int res_pregunta_4 = new Response().getFrom4();
+                    System.out.println( "Respuesta 4: " + res_pregunta_4 );
+                    
+                    if ( res_pregunta_4 == 5 )
+                        nores++;
+
+                    else {
+                        pos = correctas[3];
+
+                        if (( pos - 1 ) == res_pregunta_4 )
+                            aciertos++;
+                        else
+                            fallos++;
+                    }
+                }
+
+                public void check5() {
+                    int res_pregunta_5 = new Response().getFrom5();
+                    System.out.println( "Respuesta 5: " + res_pregunta_5 );
+
+                    if ( res_pregunta_5 == 5 )
+                        nores++;
+
+                    else {
+                        pos = correctas[4];
+
+                        if (( pos - 1 ) == res_pregunta_5 )
+                            aciertos++;
+                        else
+                            fallos++;
+                    }
+                }
+
+        } //class
+        
 } //class
