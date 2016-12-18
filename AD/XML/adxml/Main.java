@@ -7,6 +7,7 @@
 package adxml;
 
 import java.io.IOException;
+import javax.xml.transform.TransformerException;
 
 /**
  * Main class
@@ -14,26 +15,30 @@ import java.io.IOException;
  */
 public class Main {
 
-    /**********************************/
-    /*** Properties declaration *******/
+	/**********************************/
+	/*** Properties declaration *******/
 
-    
-    /**********************************/
-    /*** Methods declaration **********/
+	
+	/**********************************/
+	/*** Methods declaration **********/
 
-	    /**
-	     * Main method
-	     * 
-	     * @param args the command line arguments
-	     */
-	    public static void main( String[] args ) throws IOException {
-	        
-	        //new PruebaLeerNodosElementos();
-	        
-	        new Estadisticas();
-	        new Level().up( "Riu" );	//Ups a level to this player
-                Trace.ln( "Actualizado nivel para Riu \n" );
+		/**
+		 * Main method
+		 * 
+		 * @param args the command line arguments
+		 */
+		public static void main( String[] args ) throws IOException, TransformerException {
+			
+			//new PruebaLeerNodosElementos();
+			
 			new Estadisticas();
-	    }
-    
+			//new Level().up( "Riu" );	//Ups a level to this player
+			//Trace.ln( "Actualizado nivel para Riu \n" );
+
+			new Score().add( "Riu", 100 );	//Adds score to this player
+			Trace.ln( "Actualizada puntuación de Riu \n" );
+
+			new Estadisticas();
+		}
+	
 } //class
