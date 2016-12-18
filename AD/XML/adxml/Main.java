@@ -29,7 +29,11 @@ public class Main {
 	    public static void main( String[] args ) throws IOException {
 	        
 	        //new PruebaLeerNodosElementos();
+	        
 	        new Estadisticas();
+	        new Level().up( "Riu" );	//Ups a level to this player
+                Trace.ln( "Actualizado nivel para Riu \n" );
+			new Estadisticas();
 	    }
     
 } //class
