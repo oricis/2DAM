@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><usuarios>
+	<titulo>Puntuación usuarios</titulo>
+	
+	<usuario>
+		<nombre_usuario>Riu</nombre_usuario>
+		<horas_jugadas>2</horas_jugadas>
+		<nivel>11</nivel>
+		<puntuacion>1521</puntuacion>
+	</usuario>
+	
+	<usuario>
+		<nombre_usuario>Lupoi</nombre_usuario>
+		<horas_jugadas>2</horas_jugadas>
+		<nivel>1</nivel>
+		<puntuacion>12</puntuacion>
+	</usuario>
+
+	<usuario>
+		<nombre_usuario>Nreon</nombre_usuario>
+		<horas_jugadas>3</horas_jugadas>
+		<nivel>3</nivel>
+		<puntuacion>54</puntuacion>
+	</usuario>
+ 
+</usuarios>
