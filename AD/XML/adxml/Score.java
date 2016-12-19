@@ -11,6 +11,9 @@ import java.io.IOException;
 import javax.xml.transform.*;
 import org.w3c.dom.*;
 
+import adxml.helpers.Trace;
+
+
 /**
  * Class for traces
  * 

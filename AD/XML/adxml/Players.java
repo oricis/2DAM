@@ -15,8 +15,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.*;
 
-/**4
- * 54
+import adxml.helpers.Trace;
+
+
+/**
+ * 
  * Class for handle the players
  * 
  */

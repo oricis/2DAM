@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.util.Scanner;
 import javax.xml.transform.TransformerException;
 
+import adxml.helpers.Inputs;
+import adxml.helpers.Trace;
+
 /**
  * Main class
  * 
@@ -20,10 +23,16 @@ public class Main {
 	/*** Properties declaration *******/
 
 		private static int option;
-		private static int score;
-		private static Scanner s;
-		private static String input = "";
+		private static int value;
 		private static String player;
+
+		private static String options = ""
+			+ "Escriba el número de opción seleccionada: "
+			+ "   1. Ver estadísticas jugadores"
+			+ "   2. Subir nivel a jugador"
+			+ "   3. Añadir puntos a jugador"
+			+ "   4. Eliminar jugador"
+			+ "   5. ¿Existe el jugador?";
 	
 
 	/**********************************/
@@ -33,110 +42,84 @@ public class Main {
 		 * Main method
 		 * 
 		 * @param args the command line arguments
+		 * @throws java.io.IOException
+		 * @throws javax.xml.transform.TransformerException
 		 */
-		public static void main( String[] args ) throws IOException, TransformerException {
+		public static void main( String[] args ) 
+			throws IOException, TransformerException {
 			
-			selectOption();
-
 			//new PruebaLeerNodosElementos();
+			
+			//Selects the number of an option
+			value = Inputs.getNumberInRange( 1, 6, options );
+
+			//Handles the selected option
+			handleOptions();
 		}
 		
-		/**
-		 * Asks for a confirmation before an action
-		 *
-		 * @param      str   -> The string to appends in the confirmation message
-		 * @return     boolean
-		 */
-		private static boolean confirmAction( String str ) {
-			System.out.println( "¿Confirmar " + str + "? si / no" );
 
-			s     = new Scanner( System.in );
-			input = s.nextLine();
-			//Trace.ln( "Has seleccionado: " + input );
-
-			if ( input.equals( "si" ))
-				return true;
-
-			if ( input.equals( "no" ))
-				return false;
-
-
-			confirmAction( str );
-                        return false;
-		}
 
 		/**
 		 * Selects an options and run the program
 		 * 
 		 */
-		private static void selectOption() {
+		private static void handleOptions() throws IOException, TransformerException {
+			System.out.println( "Opción seleccionada: " + value );
 
-			showOptions();
-			s     = new Scanner( System.in );
-			input = s.nextLine();
-			System.out.println( "Opción seleccionada: " + input );
 
-			try {
-
-				option = Integer.parseInt( input );
-				Trace.ln( "" + 1 );
-
-				//Show statistiques
-				if ( option == 1 ) {
-					new Estadisticas();
-					
-					System.exit( 0 );
-				}
-
-				//Selects a player
-				selectPlayer();
-
-				//Ups a level
-				if ( option == 2 ) {
-					new Level().up( player );	//Ups a level to this player
-					Trace.ln( "Actualizado nivel de \"" + player + "\"\n" );
-					
-					System.exit( 0 );
-				}
-
-				//Adds score
-				if ( option == 3 ) {
-
-					selectScore();
-					new Score().add( player, score );	//Adds score to this player
-					Trace.ln( "Actualizada puntuación de \"" + player + "\"\n" );
+			//Show statistiques
+			if ( option == 1 ) {
+				new Estadisticas();
 				
-					System.exit( 0 );
-				}
-					
-				//Deletes a player
-				if ( option == 4 && confirmAction( "borrado" )) {
+				System.exit( 0 );
+			}
 
-					new Players().delete( player );
-					Trace.ln( "Eliminado jugador \"" + player + "\"\n" );
-					
-					System.exit( 0 );
-				}
 
-				//Shows if a player exists
-				if ( option == 5 ) {
-					String msg = "Jugador \"" + player + "\"";
-					
-					msg = ( new Players().hasIn( player ))
-						? msg + " existe."
-						: msg + " NO existe.";
+			//Selects a player
+			selectPlayer();
 
-					System.out.println( msg );
-					System.exit( 0 );
-				}
 
-        
-        
+			//Ups a level
+			if ( option == 2 ) {
+				new Level().up( player );	//Ups a level to this player
+				Trace.ln( "Actualizado nivel de \"" + player + "\"\n" );
+				
+				System.exit( 0 );
+			}
 
-			} catch( Exception e ) {
 
-				System.out.println( "Selección incorrecta" );
-				selectOption();
+			//Adds value
+			if ( option == 3 ) {
+
+				value = Inputs.getNumberInRange( 1, 10000, "Escriba puntuación a añadir: " );
+
+				new Score().add( player, value );	//Adds value to this player
+				Trace.ln( "Actualizada puntuación de \"" + player + "\"\n" );
+			
+				System.exit( 0 );
+			}
+				
+
+			//Deletes a player
+			if ( option == 4 && Inputs.getConfirmation( "borrado" )) {
+
+				new Players().delete( player );
+				Trace.ln( "Eliminado jugador \"" + player + "\"\n" );
+				
+				System.exit( 0 );
+			}
+
+
+			//Shows if a player exists
+			if ( option == 5 ) {
+				String msg = "Jugador \"" + player + "\"";
+				
+				msg = ( new Players().hasIn( player ))
+					? msg + " existe."
+					: msg + " NO existe.";
+
+				System.out.println( msg );
+				System.exit( 0 );
 			}
 		}
 
@@ -147,44 +130,9 @@ public class Main {
 		private static void selectPlayer() {
 			System.out.println( "Escriba el nombre del jugador: " );
 
-			s     = new Scanner( System.in );
-			player = s.nextLine();
+			Scanner s = new Scanner( System.in );
+			player    = s.nextLine();
 			Trace.ln( "Jugador seleccionado: " + player );
 		}
-
-		/**
-		 * Selects a score
-		 * 
-		 */
-		private static void selectScore() {
-			System.out.println( "Escriba puntuación a añadir: " );
-
-			s     = new Scanner( System.in );
-			input = s.nextLine();
-			Trace.ln( "Puntuación a añadir: " + input );
-
-			try {
-				score = Integer.parseInt( input );
-
-			} catch( Exception e ) {
-
-				System.out.println( "Selección score incorrecta" );
-				selectScore();
-			}
-		}
-
-		/**
-		 * Shows the options list
-		 * 
-		 */
-		private static void showOptions() {
-
-			System.out.println( "Escriba el número de opción seleccionada: " );
-			System.out.println( "   1. Ver estadísticas jugadores" );
-			System.out.println( "   2. Subir nivel a jugador" );
-			System.out.println( "   3. Añadir puntos a jugador" );
-			System.out.println( "   4. Eliminar jugador" );
-			System.out.println( "   5. ¿Existe el jugador?" );
-		}
-
+		
 } //class

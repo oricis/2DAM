@@ -9,6 +9,9 @@ package adxml;
 import java.io.IOException;
 import org.w3c.dom.*; 
 
+import adxml.helpers.Trace;
+
+
 /**
  * 1
  * Class for show statistics about the players
