@@ -28,11 +28,12 @@ public class Main {
 
 		private static String options = ""
 			+ "Escriba el número de opción seleccionada: "
-			+ "   1. Ver estadísticas jugadores"
-			+ "   2. Subir nivel a jugador"
-			+ "   3. Añadir puntos a jugador"
-			+ "   4. Eliminar jugador"
-			+ "   5. ¿Existe el jugador?";
+			+ "\n   1. Ver estadísticas jugadores"
+			+ "\n   2. Subir nivel a jugador"
+			+ "\n   3. Añadir puntos a jugador"
+			+ "\n   4. Eliminar jugador"
+			+ "\n   5. ¿Existe el jugador?"
+			+ "\n   6. Incrementar valor a un jugador";
 	
 
 	/**********************************/
@@ -42,11 +43,8 @@ public class Main {
 		 * Main method
 		 * 
 		 * @param args the command line arguments
-		 * @throws java.io.IOException
-		 * @throws javax.xml.transform.TransformerException
 		 */
-		public static void main( String[] args ) 
-			throws IOException, TransformerException {
+		public static void main( String[] args ) throws IOException, TransformerException {
 			
 			//new PruebaLeerNodosElementos();
 			
@@ -54,7 +52,7 @@ public class Main {
 			value = Inputs.getNumberInRange( 1, 6, options );
 
 			//Handles the selected option
-			handleOptions();
+			handleOptions( value );
 		}
 		
 
@@ -63,8 +61,10 @@ public class Main {
 		 * Selects an options and run the program
 		 * 
 		 */
-		private static void handleOptions() throws IOException, TransformerException {
-			System.out.println( "Opción seleccionada: " + value );
+		private static void handleOptions( int option ) 
+			throws IOException, TransformerException {
+				
+			System.out.println( "Opción seleccionada: " + option );
 
 
 			//Show statistiques
@@ -121,6 +121,38 @@ public class Main {
 				System.out.println( msg );
 				System.exit( 0 );
 			}
+
+
+			if ( option == 6 ) {
+
+				new PlayerData().up( 
+					player, 
+					selectField(), 
+					Inputs.getNumberInRange( 1, 50000, "¿Cantidad a añadir?" )
+				);
+			}
+		}
+
+		/**
+		 * Selects a field
+		 * 
+		 */
+		private static String selectField() {
+			options = ""
+				+ "Selecciona número del campo a incrementar:"
+				+ "\n   1. Horas jugadas"
+				+ "\n   2. Nivel"
+				+ "\n   3. Puntuación";
+
+			int res = Inputs.getNumberInRange( 1, 3, options );
+
+			if ( res == 1 ) 
+				return "horas_jugadas";
+
+			if ( res == 2 ) 
+				return "nivel";
+
+			return "puntuacion";
 		}
 
 		/**
@@ -134,5 +166,6 @@ public class Main {
 			player    = s.nextLine();
 			Trace.ln( "Jugador seleccionado: " + player );
 		}
-		
+
+
 } //class

@@ -54,8 +54,8 @@ public class PlayerData extends XmlDom {
 		public void up( String player_name, String field_name, int value )
 			throws IOException, TransformerException {
 
-			Trace.ln( "PlayerData / up()" );
-			Trace.ln( "Node name: " + field_name + " / Value: " + value );
+			//Trace.ln( "PlayerData / up()" );
+			//Trace.ln( "Node name: " + field_name + " / Value: " + value );
 
 			this.value 		 = value;
 			this.field_name  = field_name;
@@ -66,7 +66,7 @@ public class PlayerData extends XmlDom {
 			NodeList user_list = doc.getElementsByTagName( "usuario" );
 			
 			int num = user_list.getLength();
-			Trace.ln( "Número nodos \"usuario\": " + num );
+			//Trace.ln( "Número nodos \"usuario\": " + num );
 
 			if ( num > 0 && new Players().hasIn( player_name )) {
 				upFieldValue( user_list, num );
