@@ -8,22 +8,17 @@ package adxml;
 //imports
 import java.io.IOException;
 import org.w3c.dom.*; 
-import javax.xml.parsers.*; 
-//import java.io.*;
 
 /**
- * Class for ...
+ * 1
+ * Class for show statistics about the players
  * 
  */
-public class Estadisticas {
+public class Estadisticas extends XmlDom {
 
     /**********************************/
     /*** Properties declaration *******/
         
-		private final String xml_path 	   = AdPaths.XML_FILES + "puntuaciones.xml";
-
-		private DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		private Document doc;
 		private String node_name;
 
 
@@ -37,23 +32,8 @@ public class Estadisticas {
 		 */
 		public Estadisticas() throws IOException {
 
-			try {
-				DocumentBuilder builder = dbf.newDocumentBuilder();
-				doc = builder.parse( 
-					new java.io.File( xml_path )
-				);
-
-				// recupera el primer node
-				//leerNodo( doc.getFirstChild( ));
-
-				// recupera el elemento raíz
-				readNode( doc.getDocumentElement( ));
-
-			} catch ( Exception e ) {
-				e.printStackTrace();
-			}
-
-		} // main
+			readNode( doc.getDocumentElement( ));
+		} 
 
 		/**
 		 * Reads and shows info about a xml node
@@ -74,21 +54,6 @@ public class Estadisticas {
 				actual_node = childrems_list.item( i ); 
 				readNode( actual_node );
 			}
-		}
-
-		/**
-		 * Gets the node value
-		 * 
-		 * @param 	node
-		 * @return 
-		 * @throws 	java.io.IOException
-		 */
-		public String getNodeValue( Node node ) throws IOException {
-
-			NodeList childrems_list = node.getChildNodes(); 
-			Node node_hijo = childrems_list.item( 0 );
-			
-			return node_hijo.getNodeValue();
 		}
 
 		/**

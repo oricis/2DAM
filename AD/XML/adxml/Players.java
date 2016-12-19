@@ -20,50 +20,34 @@ import org.w3c.dom.*;
  * Class for handle the players
  * 
  */
-public class Players {
+public class Players extends XmlDom {
 
-    /**********************************/
-    /*** Properties declaration *******/
+	/**********************************/
+	/*** Properties declaration *******/
 
-    	private final String xml_path 	   = AdPaths.XML_FILES + "puntuaciones.xml";
+	
+	/**********************************/
+	/*** Methods declaration **********/
 
-		private DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		private Document doc;
-
-    
-    /**********************************/
-    /*** Methods declaration **********/
-
-    	/**
-    	 * Construct
-    	 * 
+		/**
+		 * Construct
+		 * 
 		 * @throws java.io.IOException
-    	 */
-    	public Players() throws IOException {
-
-			try {
-				DocumentBuilder builder = dbf.newDocumentBuilder();
-				doc = builder.parse( 
-					new java.io.File( xml_path )
-				);
-
-			} catch ( Exception e ) {
-				e.printStackTrace();
-			}
-    	}
-    	
-    	/**
-    	 * Deletes a player
-    	 *
-    	 * @param	player_name
+		 */
+		public Players() throws IOException {}
+		
+		/**
+		 * Deletes a player
+		 *
+		 * @param	player_name
 		 * @throws java.io.IOException
 		 * @throws javax.xml.transform.TransformerException
-    	 */
-    	public void delete( String player_name )
-    		throws IOException, TransformerException {
-    		Trace.ln( "Players / delete() -> player name: " + player_name );
+		 */
+		public void delete( String player_name )
+			throws IOException, TransformerException {
+			Trace.ln( "Players / delete() -> player name: " + player_name );
 
-    		NodeList users_names;
+			NodeList users_names;
 			String str;
 
 			// recupera lista nodos -> "usuario"
@@ -103,26 +87,6 @@ public class Players {
 					}
 				} //for
 			} //for
-    	}
-
-    	/**
-		 * Gets the node value
-		 * 
-		 * @param 	node
-		 * @return 
-		 * @throws 	java.io.IOException
-		 */
-		public String getNodeValue( Node node ) throws IOException {
-
-			//NodeList childrems_list = node.getChildNodes();
-			//Node child_node = childrems_list.item( 0 );
-			
-			//Las dos líneas anteriores equivalen a:
-			Node child_node = node.getFirstChild();
-			
-			return ( child_node != null)
-				? child_node.getNodeValue()
-				: null;
 		}
 
 		/**
@@ -134,9 +98,9 @@ public class Players {
 		 * @throws 	javax.xml.transform.TransformerException
 		 */
 		public boolean hasIn( String player_name ) 
-    		throws IOException, TransformerException {
+			throws IOException, TransformerException {
 
-    		Node temp_node;
+			Node temp_node;
 			String str;
 
 			// recupera lista nodos -> "usuario"
@@ -165,24 +129,6 @@ public class Players {
 			}
 
 			return false;
-		}
-
-		/**
-		 * Ups the score to the player
-		 *
-		 * @param 	node  The node
-		 */
-		private void writeXmlFile() throws 
-			TransformerConfigurationException, 
-			TransformerException 
-		{
-
-			TransformerFactory tf = TransformerFactory.newInstance();
-			Transformer trans	  = tf.newTransformer();
-			DOMSource source	  = new DOMSource( doc );
-			StreamResult res	  = new StreamResult( new File( xml_path ));
-
-			trans.transform( source, res );
 		}
 		
 } //class
