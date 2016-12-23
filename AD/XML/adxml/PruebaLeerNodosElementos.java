@@ -9,6 +9,9 @@ import java.io.IOException;
 import org.w3c.dom.*; 
 import javax.xml.parsers.*; 
 
+import adxml.helpers.Trace;
+
+
 
 /**
  * Class for prueba nodos elementos.
@@ -16,14 +19,14 @@ import javax.xml.parsers.*;
  */
 public class PruebaLeerNodosElementos {
 
-    /**********************************/
-    /*** Properties declaration *******/
-        
+	/**********************************/
+	/*** Properties declaration *******/
+		
 		private final String xml_path 	   = AdPaths.XML_FILES + "productos.xml";
 		private DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
-    /**********************************/
-    /*** Methods declaration **********/
+	/**********************************/
+	/*** Methods declaration **********/
 
 		/**
 		 * Construct
@@ -52,7 +55,7 @@ public class PruebaLeerNodosElementos {
 		/**
 		 * Reads and shows info about a xml node
 		 *
-		 * @param      nodo  The nodo
+		 * @param	  nodo  The nodo
 		 * @throws java.io.IOException
 		 */
 		public static void leerNodo( Node nodo ) throws IOException {

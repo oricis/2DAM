@@ -15,37 +15,37 @@ import org.w3c.dom.Node;
  */
 public class Trace {
 
-    /**********************************/
-    /*** Properties declaration *******/
+	/**********************************/
+	/*** Properties declaration *******/
 
-    
-    /**********************************/
-    /*** Methods declaration **********/
+	
+	/**********************************/
+	/*** Methods declaration **********/
 
-    	/**
-	     * Traces a node
-	     * 
+		/**
+		 * Traces a node
+		 * 
 		 * @param 	nodo
 		 * @throws 	java.io.IOException
-	     */
-	    public static void ln( String str ) {
+		 */
+		public static void ln( String str ) {
 
-	    	System.out.println( str );
-	    }
+			System.out.println( str );
+		}
 
 
-	    /**
-	     * Traces a node
-	     * 
+		/**
+		 * Traces a node
+		 * 
 		 * @param 	nodo
 		 * @throws 	java.io.IOException
-	     */
-	    public static void node( 
-	    	Node nodo 
-	    ) throws java.io.IOException {
-	        
+		 */
+		public static void node( 
+			Node nodo 
+		) throws java.io.IOException {
+			
 
-	        System.out.println(
+			System.out.println(
 				"Tipo Nodo: "   
 				+ nodo.getNodeType() 
 			); 
@@ -59,6 +59,6 @@ public class Trace {
 			);
 			
 			System.out.println( "-------" );
-	    }
-    
+		}
+	
 } //class

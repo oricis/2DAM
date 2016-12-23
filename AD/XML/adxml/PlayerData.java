@@ -78,8 +78,8 @@ public class PlayerData extends XmlDom {
 		/**
 		 * Ups a field for a player
 		 *
-		 * @param      user_list  The user list
-		 * @param      num        The number
+		 * @param	  user_list  The user list
+		 * @param	  num		The number
 		 */
 		private void upFieldValue( NodeList user_list, int num ) 
 			throws IOException, TransformerException {

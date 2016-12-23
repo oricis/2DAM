@@ -7,7 +7,6 @@
 package adxml;
 
 import java.io.IOException;
-import java.util.Scanner;
 import javax.xml.transform.TransformerException;
 
 import adxml.helpers.Inputs;
@@ -33,7 +32,8 @@ public class Main {
 			+ "\n   3. Añadir puntos a jugador"
 			+ "\n   4. Eliminar jugador"
 			+ "\n   5. ¿Existe el jugador?"
-			+ "\n   6. Incrementar valor a un jugador";
+			+ "\n   6. Incrementar valor a un jugador"
+			+ "\n   7. Seleccionar fichero a cargar";
 	
 
 	/**********************************/
@@ -42,20 +42,21 @@ public class Main {
 		/**
 		 * Main method
 		 * 
-		 * @param args the command line arguments
+		 * @param 	args the command line arguments
+		 * @throws 	java.io.IOException
+		 * @throws 	javax.xml.transform.TransformerException
 		 */
-		public static void main( String[] args ) throws IOException, TransformerException {
+		public static void main( String[] args ) 
+                        throws IOException, TransformerException {
 			
 			//new PruebaLeerNodosElementos();
 			
 			//Selects the number of an option
-			value = Inputs.getNumberInRange( 1, 6, options );
+			value = Inputs.getNumberInRange( 1, 7, options );
 
 			//Handles the selected option
 			handleOptions( value );
 		}
-		
-
 
 		/**
 		 * Selects an options and run the program
@@ -75,8 +76,8 @@ public class Main {
 			}
 
 
-			//Selects a player
-			selectPlayer();
+			if ( option != 7 )
+				player = Inputs.getPlayerName(); //Selects a player
 
 
 			//Ups a level
@@ -131,6 +132,14 @@ public class Main {
 					Inputs.getNumberInRange( 1, 50000, "¿Cantidad a añadir?" )
 				);
 			}
+
+
+			if ( option == 7 ) {
+
+				new OpenFile( 
+					Inputs.getFileName()
+				);
+			}
 		}
 
 		/**
@@ -154,18 +163,5 @@ public class Main {
 
 			return "puntuacion";
 		}
-
-		/**
-		 * Selects a player
-		 * 
-		 */
-		private static void selectPlayer() {
-			System.out.println( "Escriba el nombre del jugador: " );
-
-			Scanner s = new Scanner( System.in );
-			player    = s.nextLine();
-			Trace.ln( "Jugador seleccionado: " + player );
-		}
-
 
 } //class

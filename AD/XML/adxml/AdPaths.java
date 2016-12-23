@@ -12,7 +12,7 @@ package adxml;
 public class AdPaths {
 	
 	/**********************************/
-    /*** Properties declaration *******/
+	/*** Properties declaration *******/
 
 		public static final String XML_FILES = "D:\\DAM\\AD\\2EVA\\xml\\";
 	

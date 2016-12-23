@@ -19,14 +19,14 @@ import adxml.helpers.Trace;
  */
 public class Estadisticas extends XmlDom {
 
-    /**********************************/
-    /*** Properties declaration *******/
-        
+	/**********************************/
+	/*** Properties declaration *******/
+		
 		private String node_name;
 
 
-    /**********************************/
-    /*** Methods declaration **********/
+	/**********************************/
+	/*** Methods declaration **********/
 
 		/**
 		 * Construct
@@ -62,8 +62,8 @@ public class Estadisticas extends XmlDom {
 		/**
 		 * Shows the player stadistics
 		 *
-		 * @param      node  The node
-		 * @throws     java.io.IOException
+		 * @param	  node  The node
+		 * @throws	 java.io.IOException
 		 */
 		private void showPlayerStadistics( Node node ) throws IOException {
 
