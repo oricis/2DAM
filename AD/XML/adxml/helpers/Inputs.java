@@ -30,10 +30,10 @@ public class Inputs {
 		 * @param	  str   -> The string to appends in the confirmation message
 		 * @return	 boolean
 		 */
-		public static boolean getConfirmation( String str ) {
+		public static boolean confirm( String str ) {
 			
 			if ( ! str.equals( "" ))
-				System.out.println( "¿Confirmar " + str + "? si / no" );
+				System.out.println( str + " si / no" );
 
 			Scanner s	= new Scanner( System.in );
 			String input = s.nextLine();
@@ -46,7 +46,7 @@ public class Inputs {
 				return false;
 
 
-			getConfirmation( str );
+			confirm( str );
 				return false;
 		}
 

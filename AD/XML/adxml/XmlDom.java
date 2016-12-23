@@ -71,7 +71,7 @@ public class XmlDom {
 				System.out.println( "¿Desea crearlo? si / no" );
 
 				//User wants to create the xml file
-				if ( Inputs.getConfirmation( "" )) {
+				if ( Inputs.confirm( "" )) {
 					Trace.ln( "Creando fichero: " + this.xml_path );
 										
 										

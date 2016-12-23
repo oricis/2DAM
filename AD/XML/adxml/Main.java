@@ -33,7 +33,8 @@ public class Main {
 			+ "\n   4. Eliminar jugador"
 			+ "\n   5. ¿Existe el jugador?"
 			+ "\n   6. Incrementar valor a un jugador"
-			+ "\n   7. Seleccionar fichero a cargar";
+			+ "\n   7. Seleccionar fichero a cargar"
+			+ "\n   8. Crear fichero XML";
 	
 
 	/**********************************/
@@ -52,7 +53,7 @@ public class Main {
 			//new PruebaLeerNodosElementos();
 			
 			//Selects the number of an option
-			value = Inputs.getNumberInRange( 1, 7, options );
+			value = Inputs.getNumberInRange( 1, 8, options );
 
 			//Handles the selected option
 			handleOptions( value );
@@ -76,7 +77,7 @@ public class Main {
 			}
 
 
-			if ( option != 7 )
+			if ( option != 7 && option != 8 )
 				player = Inputs.getPlayerName(); //Selects a player
 
 
@@ -102,7 +103,7 @@ public class Main {
 				
 
 			//Deletes a player
-			if ( option == 4 && Inputs.getConfirmation( "borrado" )) {
+			if ( option == 4 && Inputs.confirm( "¿Confirmar borrado?" )) {
 
 				new Players().delete( player );
 				Trace.ln( "Eliminado jugador \"" + player + "\"\n" );
@@ -139,6 +140,11 @@ public class Main {
 				new OpenFile( 
 					Inputs.getFileName()
 				);
+			}
+
+			if ( option == 8 ) {
+
+				new CreateXmlFile();
 			}
 		}
 
