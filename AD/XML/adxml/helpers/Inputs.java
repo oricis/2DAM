@@ -4,7 +4,7 @@
  * 
  * @utor: Moisés Alcocer, 2016
  */
-package adxml.helpers;
+package helpers;
 
 //imports
 
