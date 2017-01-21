@@ -39,21 +39,20 @@ public class Serialize {
 		 * @param xml_path
 		 */
 		public static void make( List<Jugador> list_x, String xml_path ) {
-			Trace.ln( "Serialize / do()" );
+			Trace.ln( "Serialize / make()" );
 			
 			try {
 
 				//Creates a XStream  
 				XStream flujox = new XStream();
 
-				// Podemos indicar algunos parámetros de serialización 
-				// Para cambiar el nombre de las etiquetas XML  
-				// generadas por la clase  
-				//flujox.alias( "ListadoPersonas", ListaPersonas.class ); 
-				//flujox.alias( "Persona", Persona.class ); 
+				// Parámetros de serialización 
+				// Cambiar nombre de las etiquetas XML generadas por la clase  
+				flujox.alias( "lista-jugadores", List.class ); 
+				flujox.alias( "jugador", Jugador.class ); 
 				// Para quitar la etiqueta <lista> generada por la lista 
-				// atributo de la clase ListaPersonas  
-				//flujox.addImplicitCollection( ListaPersonas.class, "lista" ); 
+				// atributo de la clase Jugadores  
+				//flujox.addImplicitCollection( Jugadores.class, "lista" ); 
 				
 				//Stores the XStream into a file
 				flujox.toXML(  
@@ -77,12 +76,18 @@ public class Serialize {
 		 * @return 
 		 */
 		public static List<Jugador> unmake( String xml_path ) {
+			Trace.ln( "Serialize / unmake()" );
 
 			// Ya tenemos el objeto completo, ahora lo vamos a serializar	
 			try {
 				
 				// Definimos un XStream	
 				XStream flujox = new XStream(); 
+				
+				// Parámetros de serialización 
+				// Cambiar nombre de las etiquetas XML generadas por la clase  
+				flujox.alias( "lista-jugadores", List.class ); 
+				flujox.alias( "jugador", Jugador.class ); 
 				
 				List<Jugador> lista = (List<Jugador>) flujox.fromXML(
 					new FileInputStream( xml_path )
